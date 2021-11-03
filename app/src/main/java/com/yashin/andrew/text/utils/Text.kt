@@ -1,4 +1,4 @@
-package com.yashin.andrew.text
+package com.yashin.andrew.text.utils
 
 interface Text: Iterable<Char> {
     val size: Int

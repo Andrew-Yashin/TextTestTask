@@ -1,4 +1,4 @@
-package com.yashin.andrew.text
+package com.yashin.andrew.text.utils
 
 data class Command(
     val index: Int,

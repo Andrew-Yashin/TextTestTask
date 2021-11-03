@@ -1,4 +1,4 @@
-package com.yashin.andrew.text
+package com.yashin.andrew.text.utils
 
 open class TextImpl(
     val charList: ArrayList<Char> = arrayListOf(),

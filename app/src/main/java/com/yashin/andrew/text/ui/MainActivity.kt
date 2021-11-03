@@ -1,4 +1,4 @@
-package com.yashin.andrew.text
+package com.yashin.andrew.text.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -6,6 +6,10 @@ import android.widget.Button
 import android.widget.CheckBox
 import android.widget.EditText
 import android.widget.TextView
+import com.yashin.andrew.text.R
+import com.yashin.andrew.text.utils.CapitalizedTextImpl
+import com.yashin.andrew.text.utils.TextImpl
+import com.yashin.andrew.text.utils.UndoableTextImpl
 
 class MainActivity : AppCompatActivity() {
 
