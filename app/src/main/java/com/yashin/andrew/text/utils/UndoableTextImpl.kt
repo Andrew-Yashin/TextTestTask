@@ -1,23 +1,25 @@
-package com.yashin.andrew.text
+package com.yashin.andrew.text.utils
 
 class UndoableTextImpl(private val text: Text) : UndoableText, Text by text {
 
-    private val cmdList = arrayListOf<Command>()
+    private var cmdList: MutableList<Command> = arrayListOf()
     private var cmdIndex: Int = 0
 
     override fun enter(symb: Char) {
         text.enter(symb)
+        cmdList = cmdList.subList(0, cmdIndex)
         cmdList.add(Command(type = CommandType.ENTER, symbol = symb, index = text.curIndex))
         cmdIndex++
     }
 
     override fun erase(): Char? {
         val symbol = text.erase()
+        cmdList = cmdList.subList(0, cmdIndex)
         cmdList.add(
             Command(
                 type = CommandType.ERASE,
                 symbol = symbol,
-                index = if (symbol == null) text.curIndex else text.curIndex+1
+                index = if (symbol == null) text.curIndex else text.curIndex + 1
             )
         )
         cmdIndex++
@@ -26,12 +28,13 @@ class UndoableTextImpl(private val text: Text) : UndoableText, Text by text {
 
     override fun setCursor(index: Int) {
         text.setCursor(index)
+        cmdList = cmdList.subList(0, cmdIndex)
         cmdList.add(Command(type = CommandType.SET_CURSOR, index = index))
         cmdIndex++
     }
 
     override fun undo() {
-        cmdList.getOrNull(cmdIndex-1)?.let { command ->
+        cmdList.getOrNull(cmdIndex - 1)?.let { command ->
             when (command.type) {
                 CommandType.ENTER -> text.erase()
                 CommandType.ERASE -> command.symbol?.let { symbol -> text.enter(symbol) }
