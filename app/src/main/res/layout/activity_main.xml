@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/result_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="20dp"
+        android:gravity="center"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/result_cursor"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:gravity="center"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/result_text" />
+
+
+    <LinearLayout
+        android:id="@+id/enter_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/simple_actions_layout"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <EditText
+            android:id="@+id/enter_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Symbol" />
+
+        <Button
+            android:id="@+id/enter_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="ENTER" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/simple_actions_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:padding="20dp"
+        app:layout_constraintStart_toEndOf="@+id/enter_layout"
+        app:layout_constraintTop_toBottomOf="@+id/result_cursor">
+
+        <Button
+            android:id="@+id/erase_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="ERASE" />
+
+        <Button
+            android:id="@+id/undo_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="UNDO" />
+
+        <Button
+            android:id="@+id/redo_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="REDO" />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/set_cursor_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/simple_actions_layout"
+        app:layout_constraintStart_toEndOf="@+id/simple_actions_layout">
+
+        <EditText
+            android:id="@+id/set_cursor_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Index" />
+
+        <Button
+            android:id="@+id/set_cursor_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SET CURSOR" />
+
+    </LinearLayout>
+
+
+    <CheckBox
+        android:id="@+id/case_check_box"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="20dp"
+        android:text="isUpperCase"
+        app:layout_constraintEnd_toStartOf="@+id/set_cursor_layout"
+        app:layout_constraintStart_toStartOf="@+id/simple_actions_layout"
+        app:layout_constraintTop_toBottomOf="@+id/simple_actions_layout" />
+
+
+    <!--    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hello World!"
+            android:cursorVisible=""
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

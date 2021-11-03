@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Text Test Task</string>
+    <string name="text_message">Text: %1$s</string>
+    <string name="cursor_message">Cursor: %1$s</string>
+</resources>
